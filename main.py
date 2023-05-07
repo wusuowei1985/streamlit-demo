@@ -10,7 +10,7 @@ class StateKey(Enum):
     SHOULD_UPLOAD = 'should upload'
 
 
-def change_photo_state():
+def on_camera_change():
     st.session_state[StateKey.HAS_PHOTO] = True
 
 
@@ -40,11 +40,11 @@ if __name__ == '__main__':
 
     header_col, metric_col = st.columns([3, 1])
     header_col.markdown("# Welcome to my app!")
-    header_col.markdown("Here is some info for the app.")
+    header_col.markdown("My first streamlit app demo.")
     metric_col.metric(label="temperature", value="27˚C", delta="3˚C")
     load_img()
     capture_input = st.camera_input(label="take a photo",
-                                    on_change=change_photo_state,
+                                    on_change=on_camera_change,
                                     label_visibility='hidden')
     if capture_input is not None:
         st.session_state[StateKey.HAS_PHOTO] = True
