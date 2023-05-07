@@ -41,7 +41,7 @@ if __name__ == '__main__':
     header_col, metric_col = st.columns([3, 1])
     header_col.markdown("# Welcome to my app!")
     header_col.markdown("Here is some info for the app.")
-    metric_col.metric(label="temperature", value="27度", delta="3度")
+    metric_col.metric(label="temperature", value="27˚C", delta="3˚C")
     load_img()
     capture_input = st.camera_input(label="take a photo",
                                     on_change=change_photo_state,
